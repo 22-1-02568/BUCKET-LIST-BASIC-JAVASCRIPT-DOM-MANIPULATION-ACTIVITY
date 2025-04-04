@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Activity</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #daecf6;
+        }
+        button {
+            width: 200px;
+            height: 100px;
+            font-size: 1.5em;
+            margin-top: 10px;
+        }
+        #content {
+            margin: 10px;
+        }
+        .container {
+            border-style: solid;
+            background-color: #edf7d0;
+            height: auto;
+            width: 700px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="content-list">
+            <h2 id="title">Hi there! I'm Charles Albert D.g. Concepcion, and this is my lifetime bucket list</h2>
+            <ul>
+                <li>Get an OJT where I can actually learn the basics and grow my skills.</li>
+                <li>Try new stuff without overthinking.</li>
+                <li>Get back to jogging or exercising regularly.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Input Field -->
+    <p> 
+    Add New: <input type="text" id="newSkill" placeholder="add new here">
+    </p>
+
+    <!-- Buttons to change style -->
+    <button id="demoButton" onclick="addNewElement()">Add new item on the list</button>
+    <button id="demoButton" onclick="changeFontFam()">Change font family</button>
+    <button id="demoButton" onclick="makeFontBold()">Make the font bold</button>
+
+    <script>
+        function changeFontFam() {
+            document.querySelector('.container').style.fontFamily = 'Courier New';
+        }
+
+        function makeFontBold() {
+            document.querySelector('.container').style.fontWeight = 'bold';
+        }
+
+        function addNewElement() {
+            var myInput = document.getElementById("newSkill").value;
+            if (myInput.trim() !== "") {
+                var ul = document.querySelector('ul');
+                var li = document.createElement('li');
+                li.appendChild(document.createTextNode(myInput));
+                ul.appendChild(li);
+                document.getElementById("newSkill").value = ""; 
+            }
+        }
+    </script>
+</body>
+</html>
